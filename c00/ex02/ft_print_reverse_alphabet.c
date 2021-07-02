@@ -6,13 +6,13 @@
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 16:24:10 by nnancy            #+#    #+#             */
-/*   Updated: 2021/06/30 16:38:00 by nnancy           ###   ########.fr       */
+/*   Updated: 2021/07/02 07:43:35 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet (void)
+void	ft_print_alphabet(void)
 {
 	write(1, "zyxwvutsrqponmlkjihgfedcba", 26);
 }

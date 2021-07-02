@@ -6,18 +6,13 @@
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 16:41:02 by nnancy            #+#    #+#             */
-/*   Updated: 2021/06/30 16:45:24 by nnancy           ###   ########.fr       */
+/*   Updated: 2021/07/02 07:44:18 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void  ft_print_numbers (void)
+void	ft_print_numbers(void)
 {
 	write(1, "0123456789", 10);
-}
-
-int	main (void)
-{
-	ft_print_numbers();
 }

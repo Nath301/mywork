@@ -6,20 +6,20 @@
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 15:08:18 by nnancy            #+#    #+#             */
-/*   Updated: 2021/07/01 15:40:06 by nnancy           ###   ########.fr       */
+/*   Updated: 2021/07/02 07:49:07 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar (char d)
+void	ft_putchar(char d)
 {
 	write(1, &d, 1);
 }
 
-void	ft_putnbr (int nb)
+void	ft_putnbr(int nb)
 {
-	unsigned int n;
+	unsigned int	n;
 
 	if (nb < 0)
 	{
