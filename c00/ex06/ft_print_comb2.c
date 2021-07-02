@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 18:41:35 by nnancy            #+#    #+#             */
-/*   Updated: 2021/07/01 11:58:22 by nnancy           ###   ########.fr       */
+/*   Created: 2021/07/01 12:39:45 by nnancy            #+#    #+#             */
+/*   Updated: 2021/07/01 15:03:18 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void 	ft_putchar (char d)
+void	ft_putchar (char d)
 {
 	write(1, &d, 1);
 }
 
-void	ft_print_comb (void)
+void	ft_print_comb2 (void)
 {
 	char	a;
 	char	b;
-	char	c;
 
 	a = 0;
-	while (a <= 7)
+	while (a <= 98)
 	{
 		b = a + 1;
-		while (b <= 8)
+		while (b <= 99)
 		{
-			c = b + 1;
-			while (c <= 9)
-			{
-				ft_putchar(a + '0');
-				ft_putchar(b + '0');
-				ft_putchar(c + '0');
-				if (!(a == 7 && b == 8 && c == 9))
-					write(1, ", ", 2);
-				c++;
-			}
+			ft_putchar(a / 10 + '0');
+			ft_putchar(a % 10 + '0');
+			ft_putchar(' ');
+			ft_putchar(b / 10 + '0');
+			ft_putchar(b % 10 + '0');
+			ft_putchar(',');
+			ft_putchar(' ');
 			b++;
 		}
 		a++;
