@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 09:49:59 by nnancy            #+#    #+#             */
-/*   Updated: 2021/07/02 09:50:02 by nnancy           ###   ########.fr       */
+/*   Created: 2021/07/02 08:29:22 by nnancy            #+#    #+#             */
+/*   Updated: 2021/07/05 07:28:59 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != 0)
+	while (i <= n - 1 && src[i] != 0)
 	{
+		dest[i] = src [i];
 		i++;
 	}
-	return (i);
+	while (i <= n - 1)
+	{
+		dest[i] = '0';
+		i++;
+	}
+	return (dest);
 }

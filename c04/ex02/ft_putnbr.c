@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 09:49:59 by nnancy            #+#    #+#             */
-/*   Updated: 2021/07/02 09:50:02 by nnancy           ###   ########.fr       */
+/*   Created: 2021/07/05 17:21:43 by nnancy            #+#    #+#             */
+/*   Updated: 2021/07/05 17:25:28 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i] != 0)
+	void	ft_putchar(char d)
 	{
-		i++;
+		write(1, &d, 1);
 	}
-	return (i);
+
+	void	ft_putnbr(int nb)
+	{
+		unsigned int	n;
+
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			n = -nb;
+		}
+		else
+			n = nb;
+		if (n > 9)
+		{
+			ft_putnbr(n / 10);
+			n %= 10;
+		}
+		ft_putchar(n + '0');
+	}
 }

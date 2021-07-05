@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 09:49:59 by nnancy            #+#    #+#             */
-/*   Updated: 2021/07/02 09:50:02 by nnancy           ###   ########.fr       */
+/*   Created: 2021/07/05 12:00:17 by nnancy            #+#    #+#             */
+/*   Updated: 2021/07/05 14:01:08 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
-	int	i;
+	char	*cat_dest;
 
-	i = 0;
-	while (str[i] != 0)
-	{
-		i++;
-	}
-	return (i);
+	cat_dest = dest;
+	while (*cat_dest)
+		cat_dest++;
+	while (*src)
+		*cat_dest++ = *src++;
+	*cat_dest = '\0';
+	return (dest);
 }

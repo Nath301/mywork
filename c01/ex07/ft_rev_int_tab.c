@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 09:49:59 by nnancy            #+#    #+#             */
-/*   Updated: 2021/07/02 09:50:02 by nnancy           ###   ########.fr       */
+/*   Created: 2021/07/02 08:58:42 by nnancy            #+#    #+#             */
+/*   Updated: 2021/07/03 15:19:36 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	ft_rev_int_tab(int *tab, int size)
 {
 	int	i;
+	int	tmp;
 
 	i = 0;
-	while (str[i] != 0)
+	while (i < size - 1 - i)
 	{
+		tmp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = tmp;
 		i++;
 	}
-	return (i);
 }

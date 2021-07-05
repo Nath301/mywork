@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 09:49:59 by nnancy            #+#    #+#             */
-/*   Updated: 2021/07/02 09:50:02 by nnancy           ###   ########.fr       */
+/*   Created: 2021/07/05 17:05:31 by nnancy            #+#    #+#             */
+/*   Updated: 2021/07/05 17:21:17 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 int	ft_strlen(char *str)
 {
-	int	i;
+	int	n;
 
-	i = 0;
-	while (str[i] != 0)
-	{
-		i++;
-	}
-	return (i);
+	n = 0;
+	while (*str++)
+		n++;
+	return (n);
 }

@@ -6,7 +6,7 @@
 /*   By: nnancy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 12:39:45 by nnancy            #+#    #+#             */
-/*   Updated: 2021/07/02 07:47:28 by nnancy           ###   ########.fr       */
+/*   Updated: 2021/07/03 19:10:15 by nnancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ void	ft_print_comb2(void)
 			ft_putchar(' ');
 			ft_putchar(b / 10 + '0');
 			ft_putchar(b % 10 + '0');
-			ft_putchar(',');
-			ft_putchar(' ');
+			if (a < 98)
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
 			b++;
 		}
 		a++;
