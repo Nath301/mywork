@@ -10,32 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int n;
+	unsigned int		n;
 
 	n = 0;
-	while (*dest)
-		n++;
+	while (*str)
+	{
+        n++;
+	}
 	return (n);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dst, char *src, unsigned int siz)
 {
-	int dest_len;
-	char	*cat_dest;
-	int	i;
+	char			*d;
+	char			*s;
+	unsigned int	n;
+	unsigned int	dlen;
 
-	cat_dest = dest;
-	dest_len = ft_strlen(*dest);
-	i = 0;
-	while (*cat_dest && i++ < size)
-		cat_dest++;
-	while (*src)
+	d = dst;
+	s = src;
+	n = siz;
+	while (n-- != 0 && *d != '\0')
+		d++;
+	dlen = d - dst;
+	n = siz - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(s));
+	while (*s)
 	{
-		*cat_dest++ = *src++;
-		i++;
+		if (n != 1)
+		{
+			*d++ = *s;
+			n--;
+		}
+		s++;
 	}
-	*cat_dest = '\0';
-	return (dest);
+	*d = '\0';
+	return (dlen + (s - src));
 }
