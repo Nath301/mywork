@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_hexa(unsigned char s)
+void	ft_hexa(char s)
 {
 	char	*base_16;
 
@@ -30,8 +30,9 @@ void	ft_putstr_non_printable(char *str)
 {
 	while (*str)
 	{
-		if (!(*str <= 33 && *str == 127))
+		if (*str < ' ' || *str == 127)
 		{
+            ft_putchar('\\');
 			ft_hexa(*str);
 		}
 		else
@@ -39,14 +40,3 @@ void	ft_putstr_non_printable(char *str)
 		str++;
 	}
 }
-
-int main(){
-    char str[128];
-    for (int i=1; i < 128; i++)
-        str[i-1] = i;
-
-    ft_putstr_non_printable(str);
-    ft_putchar('\n');
-    ft_putstr_non_printable("Coucou\ntu vas bien ?");
-}
-

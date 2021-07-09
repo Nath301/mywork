@@ -10,59 +10,60 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_digit(char s)
+char    ft_strupcase(char str)
 {
-	if (s >= '0' && s <= '9')
-		return (1);
-	return (0);
+    if (str >= 'a' && str <= 'z')
+        str -= 32;
+    return (str);
 }
 
-int	ft_is_lowercase(char s)
+char    *ft_strlowcase(char *str)
 {
-	if (s >= 'a' && s <= 'z')
-		return (1);
-	return (0);
+    int    i;
+
+    i = 0;
+    while (str[i] != 0)
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] += 32;
+        }
+        i++;
+    }
+    return (str);
 }
 
-int	ft_is_uppercase(char s)
+int    ft_str_is_alpha(char str)
 {
-	if (s >= 'A' && s <= 'Z')
-		return (1);
-	return (0);
+    if (!((str >= 'a' && str <= 'z') || (str >= 'A' && str <= 'Z')))
+        return (0);
+    return (1);
 }
 
-char	*ft_strcapitalize(char *str)
+int ft_str_is_digit(char str)
 {
-	int	i;
-
-	i = 0;
-	while (*str)
-	{
-		if (ft_is_lowercase(str[i]) == 1 && i == 0)
-		{
-			str[i] += 32;
-			i++;
-		}
-		else if (ft_is_digit(str[i]) == 1)
-		{
-			i++;
-		}
-		else
-		{
-			str[i + 1] += 32;
-			i++;
-		}
-		str[i];
-	}
-	return (str);
+  if (str >= '0' && str <= '9')
+    return (1);
+  return (0);
 }
 
-#include <stdlib.h>
-#include <stdio.h>
-int main()
+char    *ft_strcapitalize(char *str)
 {
-    char s[100] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-    printf("%s\n",s);
-    ft_strcapitalize(s);
-    printf("%s",s);
+    int    i;
+
+    i = 0;
+    t_strlowcase(str);
+    if (ft_str_is_alpha(str[0]))
+    {
+        ft_strupcase(str[0]);
+    }
+    while (str[i] != 0)
+    {
+        if (!ft_str_is_alpha(str[i - 1]) && !ft_str_is_digit(str[i - 1]))
+        {
+            str[i] = ft_strupcase(str[i]);
+        }
+        i++;
+    }
+    return (str);
 }
