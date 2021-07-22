@@ -1,0 +1,5 @@
+Credentials cache: API:EAE184CE-4BDE-4FFD-8923-2A8A4349FD14
+        Principal: nnancy@42.FR
+
+  Issued                Expires               Principal
+Jun 30 16:40:49 2021  Jul  7 16:40:49 2021  krbtgt/42.FR@42.FR

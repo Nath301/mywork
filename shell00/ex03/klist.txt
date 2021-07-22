@@ -1,0 +1,14 @@
+Credentials cache: API:EAC7F7E0-4A49-4832-88FE-D2E6155CDA9A
+        Principal: nnancy@42.FR
+    Cache version: 0
+
+Server: krbtgt/42.FR@42.FR
+Client: nnancy@42.FR
+Ticket etype: aes256-cts-hmac-sha1-96, kvno 1
+Ticket length: 323
+Auth time:  Jun 29 09:44:20 2021
+End time:   Jul  6 09:44:20 2021
+Renew till: Jul  6 09:44:20 2021
+Ticket flags: enc-pa-rep, pre-authent, initial, renewable, proxiable, forwardable
+Addresses: addressless
+
